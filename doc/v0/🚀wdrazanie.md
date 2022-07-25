@@ -7,3 +7,4 @@ npm run start
 ```
 
 ## Na serwerze Vercel
+wdrożono na serwerze Vercel.
