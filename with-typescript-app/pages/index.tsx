@@ -1,15 +1,15 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Witam Państwa 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const App = dynamic(() => import("../components/App"), { ssr: false });
 
-export default IndexPage
+const Home: NextPage = () => {
+  return <App />;
+};
+
+export default Home;
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// reportWebVitals();
